@@ -1,4 +1,6 @@
-package tobbyspring.hellospring;
+package tobbyspring.hellospring.exrate;
+
+import tobbyspring.hellospring.payment.ExRateProvider;
 
 import java.io.IOException;
 import java.math.BigDecimal;
