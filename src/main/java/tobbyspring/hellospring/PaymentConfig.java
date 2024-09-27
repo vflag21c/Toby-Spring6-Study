@@ -2,7 +2,13 @@ package tobbyspring.hellospring;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.client.JdkClientHttpRequestFactory;
+import org.springframework.web.client.RestTemplate;
+import tobbyspring.hellospring.api.ApiTemplate;
+import tobbyspring.hellospring.api.ErApiRateExtractor;
+import tobbyspring.hellospring.api.SimpleApiExecutor;
 import tobbyspring.hellospring.exrate.CachedExRateProvider;
+import tobbyspring.hellospring.exrate.RestTemplateExRateProvider;
 import tobbyspring.hellospring.payment.ExRateProvider;
 import tobbyspring.hellospring.exrate.WebApiExRateProvider;
 import tobbyspring.hellospring.payment.PaymentService;
@@ -23,8 +29,13 @@ public class PaymentConfig {
     }
 
     @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate(new JdkClientHttpRequestFactory());
+    }
+
+    @Bean
     public ExRateProvider exRateProvider() {
-        return new WebApiExRateProvider();
+        return new RestTemplateExRateProvider(restTemplate());
     }
 
     @Bean

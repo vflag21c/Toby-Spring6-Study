@@ -5,7 +5,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import tobbyspring.hellospring.payment.Payment;
 import tobbyspring.hellospring.payment.PaymentService;
 
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.concurrent.TimeUnit;
 
