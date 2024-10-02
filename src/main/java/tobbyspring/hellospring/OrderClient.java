@@ -2,10 +2,6 @@ package tobbyspring.hellospring;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.orm.jpa.JpaTransactionManager;
-import org.springframework.transaction.support.TransactionTemplate;
-import tobbyspring.hellospring.data.OrderRepository;
 import tobbyspring.hellospring.order.Order;
 import tobbyspring.hellospring.order.OrderService;
 
