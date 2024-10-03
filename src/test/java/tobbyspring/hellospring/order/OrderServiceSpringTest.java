@@ -8,6 +8,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import tobbyspring.hellospring.OrderConfig;
 
 import javax.sql.DataSource;
@@ -16,6 +17,7 @@ import java.util.List;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = OrderConfig.class)
+@EnableTransactionManagement
 public class OrderServiceSpringTest {
 
     @Autowired
