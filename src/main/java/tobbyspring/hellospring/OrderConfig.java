@@ -9,7 +9,7 @@ import tobbyspring.hellospring.order.*;
 import javax.sql.DataSource;
 
 @Configuration
-@Import(DataConfig.class)
+@Import({DataConfig.class, HibernateListenerConfig.class, ApiAuditingConfig.class, ApiAuditColumnEventListener.class})
 public class OrderConfig {
     @Bean
     public OrderRepository orderRepository(DataSource dataSource) {
