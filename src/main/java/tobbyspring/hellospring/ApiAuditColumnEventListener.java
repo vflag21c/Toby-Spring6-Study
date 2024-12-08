@@ -4,7 +4,9 @@ import org.hibernate.event.spi.PreInsertEvent;
 import org.hibernate.event.spi.PreInsertEventListener;
 import org.hibernate.event.spi.PreUpdateEvent;
 import org.hibernate.event.spi.PreUpdateEventListener;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ApiAuditColumnEventListener implements PreInsertEventListener, PreUpdateEventListener {
 
 

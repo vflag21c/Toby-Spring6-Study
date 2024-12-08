@@ -8,7 +8,7 @@ import tobbyspring.hellospring.data.OrderRepository;
 import tobbyspring.hellospring.order.OrderService;
 
 @Configuration
-@Import({DataConfig.class, HibernateListenerConfig.class, ApiAuditingConfig.class})
+@Import({DataConfig.class, HibernateListenerConfig.class, ApiAuditingConfig.class, ApiAuditColumnEventListener.class})
 public class OrderConfig {
     @Bean
     public OrderService orderService(JpaTransactionManager transactionManager) {

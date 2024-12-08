@@ -21,7 +21,9 @@ public class HibernateListenerConfig {
         SessionFactoryImpl sessionFactory = emf.unwrap(SessionFactoryImpl.class);
         EventListenerRegistry registry = sessionFactory.getServiceRegistry().getService(EventListenerRegistry.class);
 
-//        registry.appendListeners(EventType.PRE_INSERT, new BatchAuditColumnEventListener());
-        registry.appendListeners(EventType.PRE_INSERT, new ApiAuditColumnEventListener());
+//        registry.appendListeners(EventType.PRE_INSERT, BatchAuditColumnEventListener.class);
+//        registry.appendListeners(EventType.PRE_UPDATE, new BatchAuditColumnEventListener.class);
+        registry.appendListeners(EventType.PRE_INSERT, ApiAuditColumnEventListener.class);
+        registry.appendListeners(EventType.PRE_UPDATE, ApiAuditColumnEventListener.class);
     }
 }
