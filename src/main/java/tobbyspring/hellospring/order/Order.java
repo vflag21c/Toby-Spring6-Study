@@ -1,8 +1,14 @@
 package tobbyspring.hellospring.order;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import java.math.BigDecimal;
 
+@Entity
+@EntityListeners(AuditingEntityListener.class)
 public class Order {
     private Long id;
 
